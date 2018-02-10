@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/screen_margin">
+
+            <RelativeLayout
+                android:id="@+id/imageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/loadingWaveColor"
+                android:orientation="vertical"
+                android:padding="@dimen/image_border">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:transitionName="image" />
+
+                <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+                    android:id="@+id/smoothProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/progressBarBackgroundColorLight"
+                    android:indeterminate="true"
+                    app:spb_color="@color/progressBarColor"
+                    app:spb_sections_count="6"
+                    app:spb_speed="1.5"
+                    app:spb_stroke_separator_length="32dp"
+                    app:spb_stroke_width="4dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/downloadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:background="@color/normalColor"
+                    android:drawablePadding="6dp"
+                    android:drawableRight="@drawable/ic_download"
+                    android:padding="12dp"
+                    android:text="@string/download"
+                    android:textAllCaps="false"
+                    android:textColor="@color/vanillaTextColor"
+                    android:textColorLink="@color/activeTabColor" />
+
+                <TextView
+                    android:id="@+id/imageId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:textColor="@color/vanillaTextColor"
+                    android:textColorLink="@color/activeTabColor" />
+
+                <TextView
+                    android:id="@+id/imageSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:textColor="@color/vanillaTextColor"
+                    android:layout_marginTop="@dimen/text_margin" />
+
+                <TextView
+                    android:id="@+id/fileSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:textColor="@color/vanillaTextColor"
+                    android:layout_marginTop="@dimen/text_margin" />
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:textColor="@color/vanillaTextColor"
+                    android:layout_marginTop="@dimen/text_margin" />
+
+                <TextView
+                    android:id="@+id/source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:autoLink="web"
+                    android:textColor="@color/vanillaTextColor"
+                    android:textColorLink="@color/activeTabColor" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin"
+                    android:textColor="@color/vanillaTextColor"
+                    android:layout_marginTop="@dimen/text_margin"
+                    android:text="@string/tags" />
+
+                <com.nex3z.flowlayout.FlowLayout
+                    android:id="@+id/flowLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:flChildSpacing="@dimen/text_margin"
+                    app:flChildSpacingForLastRow="align"
+                    app:flRowSpacing="@dimen/text_margin" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/photoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="invisible">
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/photoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/progressBarBackgroundColorDark"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/progressBarRedColor"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="windowBackground">#2e2e2e</color>
+    <color name="loadingRippleColor">#FF303030</color>
+    <color name="loadingWaveColor">#212121</color>
+    <color name="normalColor">#303030</color>
+    <color name="animating">#FF212121</color>
+    <color name="activeTabColor">#d34836</color>
+    <color name="progressBarColor">#46a3a3a3</color>
+    <color name="progressBarRedColor">#FFD34836</color>
+    <color name="progressBarBackgroundColorLight">#99FFFFFF</color>
+    <color name="progressBarBackgroundColorDark">#99000000</color>
+    <color name="historyIconColor">#FF808080</color>
+    <color name="vanillaTextColor">#bebebe</color>
+    <color name="viewListItemMarginColor">#4bbebebe</color>
+
+</resources>

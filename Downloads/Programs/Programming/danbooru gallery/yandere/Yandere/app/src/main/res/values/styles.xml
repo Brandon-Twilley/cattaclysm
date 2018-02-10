@@ -1,0 +1,30 @@
+<resources>
+
+    <style
+        name="AppTheme"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+
+    </style>
+
+    <style
+        name="SplashTheme"
+        parent="AppTheme">
+
+        <item name="android:windowBackground">@drawable/background_splash</item>
+
+    </style>
+
+    <style
+        name="TabLayoutTheme"
+        parent="Widget.Design.TabLayout">
+
+        <item name="tabIndicatorColor">@color/activeTabColor</item>
+        <item name="tabBackground">@android:color/white</item>
+        <item name="tabSelectedTextColor">@color/activeTabColor</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/notFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/no_image_found"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:paddingLeft="@dimen/screen_margin"
+            android:paddingRight="@dimen/screen_margin"
+            android:paddingTop="@dimen/screen_margin" />
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/floatingSearchViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginLeft="@dimen/screen_margin"
+        android:layout_marginRight="@dimen/screen_margin"
+        android:alpha="0"
+        android:background="@color/windowBackground"
+        android:orientation="vertical" />
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/floatingSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/loadingWaveColor"
+        android:tag="hide"
+        app:floatingSearch_backgroundColor="@color/loadingWaveColor"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        app:floatingSearch_hintTextColor="@color/vanillaTextColor"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_searchBarMarginLeft="@dimen/screen_margin"
+        app:floatingSearch_searchBarMarginRight="@dimen/screen_margin"
+        app:floatingSearch_searchBarMarginTop="4dp"
+        app:floatingSearch_searchHint="@string/search_hint"
+        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_suggestionsListAnimDuration="250" />
+
+</android.support.design.widget.CoordinatorLayout>
